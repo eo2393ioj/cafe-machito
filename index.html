@@ -8,121 +8,195 @@
 
 <style>
 
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    color:white;
-    text-align:center;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    background-image:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+body{
+font-family:Arial,sans-serif;
+color:white;
+text-align:center;
+background-image:url('fondo-cafe.jpg');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+z-index:-1;
+}
+
+nav{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(62,39,35,0.95);
+padding:15px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+font-size:18px;
+}
+
+nav a:hover{
+color:#ffd180;
 }
 
 header{
-    background:rgba(62,39,35,0.9);
-    padding:40px 20px;
+background:rgba(62,39,35,0.75);
+padding:50px 20px;
 }
 
 header h1{
-    margin:0;
-    font-size:40px;
+font-size:56px;
+margin-bottom:15px;
 }
 
 header p{
-    max-width:700px;
-    margin:10px auto;
-    font-size:18px;
+max-width:800px;
+margin:auto;
+font-size:20px;
+line-height:1.6;
 }
 
 .poster{
-    width:90%;
-    max-width:500px;
-    margin:30px auto;
-    border-radius:15px;
-    box-shadow:0 0 20px rgba(0,0,0,.5);
+width:95%;
+max-width:650px;
+margin:40px auto;
+border-radius:20px;
+box-shadow:0 0 25px rgba(0,0,0,.6);
+display:block;
 }
 
 .seccion{
-    max-width:900px;
-    margin:30px auto;
-    padding:20px;
+max-width:1100px;
+margin:30px auto;
+padding:20px;
 }
 
 .cupon{
-    background:rgba(255,255,255,0.95);
-    color:#3d2b1f;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.3);
+background:rgba(255,255,255,0.95);
+color:#3d2b1f;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+font-size:20px;
+line-height:1.7;
 }
 
-@keyframes pulse {
-0% {transform:scale(1);}
-50% {transform:scale(1.05);}
-100% {transform:scale(1);}
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
 }
 
 .boton{
-    display:inline-block;
-    margin-top:20px;
-    padding:15px 30px;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    border-radius:30px;
-    font-weight:bold;
-    font-size:18px;
-    animation:pulse 2s infinite;
+display:inline-block;
+margin-top:20px;
+padding:15px 35px;
+background:#25D366;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-size:20px;
+font-weight:bold;
+animation:pulse 2s infinite;
 }
 
 .menu{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-    margin-top:20px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:25px;
 }
 
 .item{
-    background:rgba(255,255,255,0.95);
-    color:#3d2b1f;
-    width:220px;
-    padding:15px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.25);
-    transition:0.3s;
+background:rgba(255,255,255,0.95);
+color:#3d2b1f;
+width:240px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.25);
+transition:.3s;
 }
 
 .item:hover{
-    transform:translateY(-5px);
+transform:translateY(-8px);
 }
 
 .item h2{
-    color:#6d4c41;
+color:#6d4c41;
+margin-top:10px;
+}
+
+.galeria{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:20px;
+}
+
+.galeria img{
+width:300px;
+border-radius:15px;
+box-shadow:0 0 15px rgba(0,0,0,.4);
 }
 
 footer{
-    background:rgba(62,39,35,0.9);
-    color:white;
-    padding:20px;
-    margin-top:40px;
+background:rgba(62,39,35,0.9);
+padding:25px;
+margin-top:40px;
 }
 
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:18px 25px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:18px;
-    box-shadow:0 0 10px rgba(0,0,0,.3);
-    z-index:999;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:18px 25px;
+border-radius:50px;
+text-decoration:none;
+font-size:18px;
+font-weight:bold;
+box-shadow:0 0 15px rgba(0,0,0,.4);
+z-index:999;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:36px;
+}
+
+nav a{
+display:block;
+margin:8px 0;
+}
+
+.menu{
+flex-direction:column;
+align-items:center;
+}
+
+.galeria img{
+width:90%;
+}
+
 }
 
 </style>
@@ -131,22 +205,33 @@ footer{
 
 <body>
 
-<header>
+<div class="overlay"></div>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#cupon">Cupón</a>
+<a href="#menu">Menú</a>
+<a href="#historia">Historia</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<header id="inicio">
 
 <h1>☕ Revancha Oficial del Café Machito</h1>
 
-<p>Pequeño de tamaño, gigante en risas.</p>
+<p>
+Pequeño de tamaño, gigante en risas.
+</p>
 
 <p>
-Presenta tu cupón digital y disfruta una nueva oportunidad
-para compartir un café, una conversación y muchas risas.
+Presenta tu cupón digital y disfruta una nueva oportunidad para compartir un café, una conversación y muchas risas.
 </p>
 
 </header>
 
 <img src="cafemachito.jpg" class="poster" alt="Café Machito">
 
-<div class="seccion cupon">
+<div id="cupon" class="seccion cupon">
 
 <h2>🎟 Cupón Especial</h2>
 
@@ -177,7 +262,7 @@ La segunda vez prometo una historia aún mejor.
 
 </div>
 
-<div class="seccion">
+<div id="menu" class="seccion">
 
 <h2>☕ Menú Destacado</h2>
 
@@ -211,7 +296,22 @@ La segunda vez prometo una historia aún mejor.
 
 </div>
 
-<footer>
+<div id="historia" class="seccion cupon">
+
+<h2>❤️ Nuestra Historia</h2>
+
+<p>
+Todo comenzó con una conversación, un café y muchas risas.
+</p>
+
+<p>
+Algunas historias merecen una segunda oportunidad.
+Por eso existe el Café Machito: un lugar donde los mejores momentos siempre tienen revancha.
+</p>
+
+</div>
+
+<footer id="contacto">
 
 <p>☕ Café Machito - Promoción Especial</p>
 
