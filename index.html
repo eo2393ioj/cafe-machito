@@ -1,26 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revancha Oficial del Café Machito</title>
+<title>Café Machito - Revancha Oficial</title>
 
 <style>
 body{
     margin:0;
-    font-family:Arial,sans-serif;
+    font-family:Arial, sans-serif;
     background:#f5f0ea;
-    text-align:center;
     color:#3d2b1f;
+    text-align:center;
 }
 
 header{
     background:#4e342e;
     color:white;
-    padding:40px;
+    padding:40px 20px;
 }
 
-h1{
+header h1{
     margin:0;
 }
 
@@ -32,11 +33,14 @@ h1{
     box-shadow:0 0 15px rgba(0,0,0,.3);
 }
 
+.seccion{
+    max-width:900px;
+    margin:30px auto;
+    padding:20px;
+}
+
 .cupon{
     background:white;
-    width:90%;
-    max-width:700px;
-    margin:20px auto;
     padding:25px;
     border-radius:15px;
     box-shadow:0 0 10px rgba(0,0,0,.15);
@@ -44,15 +48,53 @@ h1{
 
 .boton{
     display:inline-block;
-    margin:25px;
+    margin-top:20px;
     padding:15px 30px;
-    background:#8d6e63;
+    background:#25D366;
     color:white;
     text-decoration:none;
     border-radius:30px;
     font-weight:bold;
+    font-size:18px;
+}
+
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.item{
+    background:white;
+    width:220px;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,.1);
+}
+
+footer{
+    background:#4e342e;
+    color:white;
+    padding:20px;
+    margin-top:40px;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 20px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
 }
 </style>
+
 </head>
 
 <body>
@@ -62,40 +104,58 @@ h1{
 <p>Pequeño de tamaño, gigante en risas</p>
 </header>
 
-<img src="cafemachito.jpg" class="poster">
-<br><br>
+<img src="cafemachito.jpg" class="poster" alt="Café Machito">
 
-<a href="https://wa.me/573196014331?text=Hola,%20quiero%20reclamar%20mi%20cupón%20de%20Café%20Machito"
-   style="
-   background:#25D366;
-   color:white;
-   padding:15px 30px;
-   text-decoration:none;
-   border-radius:10px;
-   font-size:20px;
-   font-weight:bold;
-   display:inline-block;">
-   ☕ Reclamar Cupón
-</a>
-<div class="cupon">
+<div class="seccion cupon">
 <h2>🎟 Cupón Especial</h2>
 
-<p>✔ Una segunda conversación</p>
-<p>✔ Otra buena risa</p>
-<p>✔ Un café de tamaño normal</p>
+<p>☕ Una segunda conversación inolvidable</p>
+<p>😄 Otra buena dosis de risas</p>
+<p>🎁 Un café tamaño normal completamente gratis</p>
 
 <h3>Válido hasta agotar existencias</h3>
 
-<p>
-"La primera vez nos reímos del tamaño.
-La segunda vez prometo una historia aún mejor."
-</p>
-
-<a class="boton" href="#">
-☕ Reclamar Cupón
-</a>
+<a class="boton"
+href="https://wa.me/573196014331?text=Hola,%20quiero%20reclamar%20mi%20cupón%20de%20Café%20Machito">
+☕ Reclamar Cupón </a>
 
 </div>
+
+<div class="seccion">
+<h2>☕ Menú Destacado</h2>
+
+<div class="menu">
+
+<div class="item">
+<h3>Espresso</h3>
+<p>Intenso y aromático.</p>
+</div>
+
+<div class="item">
+<h3>Capuccino</h3>
+<p>Cremoso y equilibrado.</p>
+</div>
+
+<div class="item">
+<h3>Latte</h3>
+<p>Suave y delicioso.</p>
+</div>
+
+<div class="item">
+<h3>Americano</h3>
+<p>Clásico para cualquier momento.</p>
+</div>
+
+</div>
+</div>
+
+<footer>
+<p>☕ Café Machito - Promoción especial</p>
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/573196014331?text=Hola,%20quiero%20reclamar%20mi%20cupón%20de%20Café%20Machito">
+💬 WhatsApp </a>
 
 </body>
 </html>
