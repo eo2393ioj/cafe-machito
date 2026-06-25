@@ -145,9 +145,15 @@ transform:translateY(-8px);
 }
 
 .item h2{
-color:#6d4c41;
-margin-top:10px;
+background:#6d4c41;
+color:white;
+display:inline-block;
+padding:8px 15px;
+border-radius:20px;
+margin-top:12px;
+font-size:20px;
 }
+
 .cafeimg{
 width:100%;
 height:180px;
@@ -281,8 +287,9 @@ width:90%;
 <h1>☕ Revancha Oficial del Café Machito</h1>
 
 <p>
-Pequeño de tamaño, gigante en risas.
+Más que un café, una experiencia para recordar.
 </p>
+
 
 <p>
 Presenta tu cupón digital y disfruta una nueva oportunidad para compartir un café, una conversación y muchas risas.
