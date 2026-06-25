@@ -3,26 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Cafe Machito: cupon digital, menu destacado, historia y contacto por WhatsApp.">
   <title>Cafe Machito - Revancha Oficial</title>
 
   <style>
-    :root {
-      --ink: #211814;
-      --paper: #fffaf2;
-      --white: #ffffff;
-      --coffee: #5b372a;
-      --coffee-dark: #2d1b16;
-      --caramel: #d89b57;
-      --mint: #2f8f6b;
-      --coral: #e86f4c;
-      --shadow: 0 18px 45px rgba(20, 12, 8, 0.24);
-    }
-
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -30,140 +17,627 @@
     }
 
     body {
-      min-height: 100vh;
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
+      color: #2b1b14;
       background:
-        linear-gradient(rgba(22, 13, 10, 0.56), rgba(22, 13, 10, 0.4)),
-        url("fondo-cafe.jpg.png") center / cover fixed,
-        #3b2a20;
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("fondo-cafe.jpg.png") center / cover fixed;
       line-height: 1.6;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .page {
-      background: rgba(255, 250, 242, 0.92);
-    }
-
-    .nav {
+    nav {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 1000;
       display: flex;
       justify-content: center;
-      gap: 8px;
-      padding: 12px;
-      background: rgba(45, 27, 22, 0.94);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-      backdrop-filter: blur(10px);
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 14px;
+      background: rgba(45, 27, 20, 0.95);
     }
 
-    .nav a {
-      min-height: 40px;
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
       padding: 8px 12px;
       border-radius: 8px;
-      color: var(--white);
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-decoration: none;
     }
 
-    .nav a:hover,
-    .nav a:focus-visible {
-      color: var(--coffee-dark);
-      background: var(--caramel);
-      outline: none;
+    nav a:hover {
+      background: #d89b57;
+      color: #2b1b14;
     }
 
-    .hero {
-      min-height: 88vh;
-      display: grid;
-      align-items: end;
-      color: var(--white);
+    header {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 60px 20px;
+      color: white;
       background:
-        linear-gradient(90deg, rgba(25, 16, 12, 0.9), rgba(25, 16, 12, 0.42)),
+        linear-gradient(90deg, rgba(32, 18, 12, 0.88), rgba(32, 18, 12, 0.35)),
         url("cafemachito.jpg.png") center / cover;
     }
 
-    .hero__content {
-      width: min(1120px, calc(100% - 32px));
+    .hero {
+      width: min(1100px, 100%);
       margin: 0 auto;
-      padding: 84px 0 76px;
-      text-align: left;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 14px;
-      padding: 7px 10px;
-      border: 1px solid rgba(255, 255, 255, 0.32);
+    .etiqueta {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 8px 12px;
       border-radius: 999px;
-      color: #ffe2b9;
-      font-size: 0.9rem;
-      font-weight: 700;
-      background: rgba(0, 0, 0, 0.2);
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffe0b2;
+      font-weight: bold;
     }
 
-    .hero h1 {
+    h1 {
       max-width: 760px;
-      font-size: clamp(2.4rem, 7vw, 5.7rem);
-      line-height: 0.98;
-      text-shadow: 0 10px 28px rgba(0, 0, 0, 0.36);
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: 1;
+      margin-bottom: 20px;
     }
 
-    .hero p {
-      max-width: 690px;
-      margin-top: 20px;
-      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
-      color: #fff3e2;
+    header p {
+      max-width: 650px;
+      font-size: 21px;
+      color: #fff0df;
+      margin-bottom: 28px;
     }
 
-    .actions {
+    .botones {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 12px 20px;
+    .boton {
+      display: inline-block;
+      padding: 14px 22px;
       border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 800;
+      background: #2f8f6b;
+      color: white;
       text-decoration: none;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      font-weight: bold;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
     }
 
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px);
-      outline: none;
+    .boton:hover {
+      background: #26785a;
     }
 
-    .btn--primary {
-      color: var(--white);
-      background: var(--mint);
-      box-shadow: 0 14px 28px rgba(47, 143, 107, 0.35);
+    .boton.secundario {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.45);
     }
 
-    .btn--primary:hover,
-    .btn--primary:focus-visible {
-      background: #27775a;
+    section {
+      padding: 70px 20px;
+      background: #fffaf2;
     }
 
-    .btn--secondary {
-      color: var(--white);
+    section:nth-of-type(even) {
+      background: #f3dfc7;
+    }
+
+    .contenedor {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .titulo h2 {
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .titulo p {
+      font-size: 18px;
+      color: #60443a;
+    }
+
+    .cupon-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+    }
+
+    .cupon,
+    .panel,
+    .tarjeta,
+    .opinion,
+    .beneficio {
+      border-radius: 12px;
+      box-shadow: 0 16px 38px rgba(20, 12, 8, 0.18);
+    }
+
+    .cupon {
+      padding: 34px;
+      color: white;
+      background: linear-gradient(135deg, #5b372a, #7d4934);
+    }
+
+    .cupon h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .cupon ul {
+      list-style: none;
+      margin: 24px 0;
+      display: grid;
+      gap: 12px;
+      font-size: 18px;
+    }
+
+    .cupon li::before {
+      content: "• ";
+      color: #ffd180;
+      font-weight: bold;
+    }
+
+    .cupon small {
+      display: block;
+      margin-top: 14px;
+      color: #ffe7cc;
+    }
+
+    .panel {
+      padding: 28px;
+      background: white;
+      display: grid;
+      align-content: center;
+      gap: 14px;
+    }
+
+    .contador {
+      width: fit-content;
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: white;
+      background: #e86f4c;
+      font-weight: bold;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .tarjeta {
+      overflow: hidden;
+      background: white;
+    }
+
+    .tarjeta img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+      background: #d7c1aa;
+    }
+
+    .tarjeta .info {
+      padding: 18px;
+    }
+
+    .tarjeta h3 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .precio {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: #5b372a;
+      color: white;
+      font-weight: bold;
+    }
+
+    .historia {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .historia img {
+      width: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 16px 38px rgba(20, 12, 8, 0.18);
+      background: #d7c1aa;
+    }
+
+    .historia p {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+
+    .opiniones,
+    .beneficios {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .opinion,
+    .beneficio {
+      padding: 24px;
+      background: white;
+    }
+
+    .estrellas {
+      color: #c8872f;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .galeria img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+      background: #d7c1aa;
+    }
+
+    .horarios {
+      background: #2d1b16;
+      color: white;
+    }
+
+    .horarios .titulo p {
+      color: #f7dcc1;
+    }
+
+    .horario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .horario {
+      padding: 22px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-align: center;
+    }
+
+    footer {
+      padding: 55px 20px 95px;
+      text-align: center;
+      color: white;
+      background: #19100d;
+    }
+
+    footer h2 {
+      color: #ffd9a8;
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      margin: 8px 0;
+      color: #f6ddc6;
+    }
+
+    footer .boton {
+      margin-top: 20px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2000;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: #25d366;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+    }
+
+    @media (max-width: 900px) {
+      .cupon-grid,
+      .historia {
+        grid-template-columns: 1fr;
+      }
+
+      .menu,
+      .galeria {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .opiniones,
+      .beneficios,
+      .horario-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+      }
+
+      header {
+        min-height: 78vh;
+      }
+
+      header p {
+        font-size: 18px;
+      }
+
+      .botones,
+      .boton {
+        width: 100%;
+        text-align: center;
+      }
+
+      section {
+        padding: 52px 16px;
+      }
+
+      .menu,
+      .galeria {
+        grid-template-columns: 1fr;
+      }
+
+      .cupon {
+        padding: 24px;
+      }
+
+      .whatsapp {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 14px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#cupon">Cupon</a>
+    <a href="#menu">Menu</a>
+    <a href="#historia">Historia</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <header id="inicio">
+    <div class="hero">
+      <span class="etiqueta">Revancha oficial</span>
+      <h1>Cafe Machito</h1>
+      <p>El lugar perfecto para repetir una conversacion, reirse del recuerdo y reclamar un cafe con sabor a segunda oportunidad.</p>
+
+      <div class="botones">
+        <a class="boton" href="https://wa.me/573196014331?text=Hola,%20quiero%20reclamar%20mi%20cupon%20de%20Cafe%20Machito">Reclamar cupon</a>
+        <a class="boton secundario" href="#menu">Ver menu</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="cupon">
+    <div class="contenedor cupon-grid">
+      <div class="cupon">
+        <h2>Cupon especial</h2>
+        <p>Una excusa sencilla para volver a compartir algo rico y pasarla bien.</p>
+
+        <ul>
+          <li>Una segunda conversacion inolvidable.</li>
+          <li>Otra buena dosis de risas.</li>
+          <li>Un cafe tamano normal completamente gratis.</li>
+        </ul>
+
+        <a class="boton" href="https://wa.me/573196014331?text=Hola,%20quiero%20reclamar%20mi%20cupon%20de%20Cafe%20Machito">Obtener cupon</a>
+        <small>Valido hasta agotar existencias.</small>
+      </div>
+
+      <div class="panel">
+        <span class="contador">17 cupones reclamados</span>
+        <h3>Promocion exclusiva</h3>
+        <p>La primera vez nos reimos del tamano. La segunda vez prometo una historia aun mejor.</p>
+        <p>Mas cafe, mas risas y una nueva oportunidad para crear recuerdos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="contenedor">
+      <div class="titulo">
+        <h2>Menu destacado</h2>
+        <p>Cuatro clasicos para elegir segun el animo del dia.</p>
+      </div>
+
+      <div class="menu">
+        <div class="tarjeta">
+          <img src="espresso.jpg.png" alt="Taza de espresso">
+          <div class="info">
+            <h3>Espresso</h3>
+            <p>Intenso y aromatico.</p>
+            <span class="precio">$5.000</span>
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <img src="capuccino.jpg.png" alt="Capuccino cremoso">
+          <div class="info">
+            <h3>Capuccino</h3>
+            <p>Cremoso y equilibrado.</p>
+            <span class="precio">$8.000</span>
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <img src="latte.jpg.png" alt="Cafe latte servido en taza">
+          <div class="info">
+            <h3>Latte</h3>
+            <p>Suave y delicioso.</p>
+            <span class="precio">$9.000</span>
+          </div>
+        </div>
+
+        <div class="tarjeta">
+          <img src="americano.jpg.png" alt="Cafe americano">
+          <div class="info">
+            <h3>Americano</h3>
+            <p>Clasico para cualquier momento.</p>
+            <span class="precio">$6.000</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <div class="contenedor historia">
+      <img src="cafemachito.jpg.png" alt="Imagen principal de Cafe Machito">
+
+      <div>
+        <div class="titulo" style="text-align:left;">
+          <h2>Nuestra historia</h2>
+          <p>Algunos momentos merecen repetirse.</p>
+        </div>
+
+        <p>Todo comenzo con una conversacion sencilla, un cafe y muchas risas.</p>
+        <p>Con el tiempo descubrimos que una buena charla no se queda en una sola taza.</p>
+        <p>Por eso nacio Cafe Machito: una invitacion para compartir historias, crear recuerdos y disfrutar cada visita.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="contenedor">
+      <div class="titulo">
+        <h2>Lo que dicen nuestros visitantes</h2>
+        <p>Opiniones cortas, directas y con ganas de volver.</p>
+      </div>
+
+      <div class="opiniones">
+        <div class="opinion">
+          <div class="estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Una experiencia inolvidable."</p>
+        </div>
+
+        <div class="opinion">
+          <div class="estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"El mejor cupon que he reclamado."</p>
+        </div>
+
+        <div class="opinion">
+          <div class="estrellas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Volveria por otra revancha."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="contenedor">
+      <div class="titulo">
+        <h2>Momentos Cafe Machito</h2>
+        <p>Un vistazo rapido a los favoritos de la casa.</p>
+      </div>
+
+      <div class="galeria">
+        <img src="espresso.jpg.png" alt="Espresso en Cafe Machito">
+        <img src="capuccino.jpg.png" alt="Capuccino en Cafe Machito">
+        <img src="latte.jpg.png" alt="Latte en Cafe Machito">
+        <img src="americano.jpg.png" alt="Americano en Cafe Machito">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="contenedor">
+      <div class="titulo">
+        <h2>Por que elegir Cafe Machito</h2>
+      </div>
+
+      <div class="beneficios">
+        <div class="beneficio">
+          <h3>Cafe de calidad</h3>
+          <p>Seleccionamos buenos granos para ofrecer una experiencia cuidada desde la primera taza.</p>
+        </div>
+
+        <div class="beneficio">
+          <h3>Buen ambiente</h3>
+          <p>Un espacio ideal para conversar, reir y quedarse un rato mas.</p>
+        </div>
+
+        <div class="beneficio">
+          <h3>Experiencias memorables</h3>
+          <p>Cada visita es una oportunidad para vivir un momento simple, bonito y distinto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="horarios">
+    <div class="contenedor">
+      <div class="titulo">
+        <h2>Horarios de atencion</h2>
+        <p>Ven por tu cafe cuando el dia pida una pausa.</p>
+      </div>
+
+      <div class="horario-grid">
+        <div class="horario">
+          <strong>Lunes a viernes</strong>
+          <p>7:00 AM - 8:00 PM</p>
+        </div>
+
+        <div class="horario">
+          <strong>Sabados</strong>
+          <p>8:00 AM - 9:00 PM</p>
+        </div>
+
+        <div class="horario">
+          <strong>Domingos</strong>
+          <p>8:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contacto">
+    <h2>Cafe Machito</h2>
+    <p>Mas cafe, mas risas, mas historias.</p>
+    <p>Colombia</p>
+    <p>WhatsApp: 319 601 4331</p>
+
+    <a class="boton" href="https://wa.me/573196014331?text=Hola,%20quiero%20mas%20informacion%20de%20Cafe%20Machito">Contactar ahora</a>
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/573196014331?text=Hola,%20quiero%20reclamar%20mi%20cupon%20de%20Cafe%20Machito">
+    WhatsApp
+  </a>
+</body>
+</html>
